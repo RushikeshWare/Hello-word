@@ -1,0 +1,77 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angular JS</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+</head>
+
+<body>
+    <!-- <p data-ng-init="fname='rushikesh Ware'"></p>
+    <p>Name: <input type="text" ng-model="name"> </p>
+    <p ng-bind="name" ></p>
+    <p ng-bind="fname"> <span>my first </p> -->
+
+    <!-- <div ng-app="myApp" ng-controller="myCtrl" ng-init="myCol='lightblue'">
+      <div style="background-color: {{myCol}}" ng-model="myCol">
+        <input type="text" name="fname" ng-model="fname " placeholder="First Name" >
+        <input type="text" name="lname" ng-model="lname " placeholder="Last Name">
+        <input type="text">
+        <p> Your Full Name : <span>{{fname +" "+ lname}}</span> </p>
+      </div>
+    </div> -->
+    <!-- <div ng-app="" ng-init="person={firstName:'John',lastName:'Doe'}">
+
+        <p>The name is {{ person.lastName }}</p>
+        
+        </div> -->
+
+
+    <!-- <div ng-init="person={fname:'rushikesh',lname:'ware'}" >
+        <p>the name is: {{ person.fname +" "+person.lname}} <span ng-bind="person.lname">form Span: </span></p>
+    </div>
+
+    <div ng-init="number=[1,2,3,4,5,6]">
+        <p ng-bind="number[2]">the number is:</p>
+        <p>{{number[4]}}</p>
+    </div> -->
+    <div ng-app="myApp">
+        <!-- <p ng-init="color=['yellow','red','orange']"></p>
+        <li ng-repeat="x in color"> {{x}}<li> -->
+        <div ng-controller="myController">
+            <input type="text" name="fname" ng-model="fname ">
+            <input type="text" name="lname" ng-model="lname ">
+
+            <br>
+            <h2>First Name: <p ng-bind="fname"></p>
+            </h2>
+            <h2>Last Name: <p ng-bind="lname"></p>
+            </h2>
+
+            <ol>
+                <li ng-repeat="x in color">{{x}}</li>
+            </ol>
+            <br>
+            <p>{{test()}}</p>
+        </div>
+    </div>
+
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller("myController", function ($scope) {
+            // alert("Hello Controller");
+            $scope.fname = "";
+            $scope.lname = "";
+            $scope.color = ['red', 'blue', 'green', 'yellow', 'orange'];
+            $scope.test = function () {
+                return "Name: " + $scope.fname + " " + $scope.lname;
+            };
+        });
+
+
+    </script>
+</body>
+
+</html>
